@@ -7,6 +7,7 @@ class Cupcake
   include Comparable
 
   attr_reader :kind, :sugar_content
+
   def initialize(kind, sugar_content)
     @kind = kind
     @sugar_content = sugar_content
@@ -23,9 +24,9 @@ class CupcakeComparisonsTest < Minitest::Homework
   def test_equality
     c1 = Cupcake.new("chocolate", 45)
     c2 = Cupcake.new("chocolate", 45)
-    maybe c1.object_id == c2.object_id
-    maybe c1 == c2
-    maybe c1 <= c2
+    refute c1.object_id == c2.object_id
+    refute c1 == c2
+    refute c1 <= c2
     maybe c1 >= c2
     maybe c1 < c2
     maybe c1 > c2
