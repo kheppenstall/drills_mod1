@@ -1,8 +1,9 @@
 gem 'minitest', '~> 5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require 'time'
+require_relative 'time'
 require_relative 'appointments'
+require 'pry'
 
 class AppointmentsTest < Minitest::Test
   def test_no_appointments
@@ -11,7 +12,6 @@ class AppointmentsTest < Minitest::Test
   end
 
   def test_earliest_of_one
-    skip
     slots = Appointments.new
     t1 = Time.new(2014, 3, 14, 4, 30)
     slots.at t1
@@ -19,7 +19,6 @@ class AppointmentsTest < Minitest::Test
   end
 
   def test_earliest_of_several
-    skip
     slots = Appointments.new
     t1 = Time.new(2014, 6, 14, 16, 30)
     t2 = Time.new(2014, 2, 28, 8, 30)
